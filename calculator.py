@@ -4,19 +4,20 @@ calculator.py
 
 One function per operation, in order.
 """
+
 import math
 
 def square_root(a):
     try:
         return math.sqrt(a)
     except ValueError:
-        raise ValueError("Cannot take square root of a negative number")
+        raise ValueError
 
 def hypotenuse(a,b):
     try:
         return math.hypot(a, b)
     except ValueError:
-        raise ValueError("Invalid input")
+        raise ValueError
 
 # First example
 def add(a, b): 
@@ -25,20 +26,24 @@ def add(a, b):
 def subtract(a, b):
     return a - b
 
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if a == 0:
-        raise ZeroDivisionError("Cannot divide by zero")
-    return b / a
 
 def logarithm(a, b):
     if a <= 0 or a == 1 or b <= 0:
-        raise ValueError("Invalid logarithm")
+        raise ValueError
     return math.log(b, a)
 
-def exponent(a, b):
-    return a ** b
 
+
+def mul(a,b):
+    return a*b
+
+def div(a,b):
+    if b == 0:
+        raise ZeroDivisionError
+    else:
+        return b/a
+
+
+def exp(a,b):
+    return a**b
 
